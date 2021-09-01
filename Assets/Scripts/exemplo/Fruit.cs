@@ -32,8 +32,8 @@ public class Fruit : MonoBehaviour
             cc.enabled = false;
             collected.SetActive(true);
 
-            GameController.instance.TotalScore += Score;
-            GameController.instance.UpdateScore();
+            GameControllerEx.instance.TotalScore += Score;
+            GameControllerEx.instance.UpdateScore();
 
             Destroy(gameObject, 0.25f);
         }                
