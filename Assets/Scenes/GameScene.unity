@@ -2153,7 +2153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76f9fb475ce6674da979fac5f7345fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   jumpforce: 8
   pause: {fileID: 0}
   pausepainel: {fileID: 0}
