@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3723269681699204890, guid: e3690b0f982388d41bb8fa8be0bb9534, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.46
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3690b0f982388d41bb8fa8be0bb9534, type: 3}
 --- !u!1 &129382040
@@ -1208,6 +1212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 324492886}
+  deathParticle: {fileID: 64562289315716248, guid: e4381116fc6209942816e8853b6e1015, type: 3}
+  respawnParticle: {fileID: 5803023882805513028, guid: cc2f2a302ae0c8548a700492e0d01f9e, type: 3}
 --- !u!4 &826612424
 Transform:
   m_ObjectHideFlags: 0
@@ -2680,6 +2686,10 @@ PrefabInstance:
     - target: {fileID: 3723269681643833961, guid: e3690b0f982388d41bb8fa8be0bb9534, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723269681699204890, guid: e3690b0f982388d41bb8fa8be0bb9534, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 3723269681699204891, guid: e3690b0f982388d41bb8fa8be0bb9534, type: 3}
       propertyPath: m_IsTrigger
