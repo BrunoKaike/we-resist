@@ -28,8 +28,6 @@ public class Player : MonoBehaviour
         Rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        isJumping = false;
-        isDoubleJump = false;
     }
 
     void Update()
