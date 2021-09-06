@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fruit : MonoBehaviour
+public class Pearl : MonoBehaviour
 {
     private SpriteRenderer sr;
     private CircleCollider2D cc;
 
-    public GameObject collected;
     public int Score;
 
     // Start is called before the first frame update
@@ -15,13 +14,6 @@ public class Fruit : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         cc = GetComponent<CircleCollider2D>();
-        collected.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -30,12 +22,13 @@ public class Fruit : MonoBehaviour
         {
             sr.enabled = false;
             cc.enabled = false;
-            collected.SetActive(true);
 
-            GameControllerEx.instance.TotalScore += Score;
-            GameControllerEx.instance.UpdateScore();
+            GameController.instance.TotalScore += Score;
+            GameController.instance.UpdateScore();
 
             Destroy(gameObject, 0.25f);
         }                
     }
+
+   
 }
