@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public float speed;
     public float jumpforce;
 
+    private bool isJumping;
+    private bool isDoubleJump;
+
     private Rigidbody2D Rigi;
     private Animator animator;
     public GameController pause;
@@ -24,6 +27,9 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         Rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        isJumping = false;
+        isDoubleJump = false;
     }
 
     void Update()
@@ -66,11 +72,23 @@ public class Player : MonoBehaviour
 
     void jump()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Rigi.AddForce(new Vector2(0f,jumpforce),ForceMode2D.Impulse);
+        if(Input.GetButtonDown("Jump")) {            
+            if(isJumping) {
+                if(isDoubleJump) {
+                    //funcao pronta que da o impulso do pulo 
+                    Rigi.AddForce(new Vector2(0f, jumpforce), ForceMode2D.Impulse);
+                    isDoubleJump = false;
+                    animator.SetBool("doublejump", true);               
+                }
+            } else {
+                //funcao pronta que da o impulso do pulo
+                Rigi.AddForce(new Vector2(0f, jumpforce), ForceMode2D.Impulse);
+                isDoubleJump = true;
+                animator.SetBool("jump", true);
+            }
         }
     }
+
     void Painelpause()
     {
         if (isPaused)
@@ -88,6 +106,28 @@ public class Player : MonoBehaviour
             Time.timeScale = 0f;
             pausepainel.SetActive(true);
 
+        }
+    }
+
+        // ----- metodos padroes da unit reescritos
+    //detecta se gameObject (player) tocou em algo (necessario RigidBody e Colisores)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //8 eh o nosso layer 'Ground' do objeto Ground
+        if(collision.gameObject.layer == 8) {
+            isJumping = false;
+            animator.SetBool("jump", false);
+            animator.SetBool("doublejump", false);
+        }
+
+    }
+
+    //detecta se gameObject (player) para de tocar algo (necessario RigidBody e Colisores)
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        //8 eh o nosso layer 'Ground' do objeto Ground
+        if(collision.gameObject.layer == 8) {
+            isJumping = true;
         }
     }
 
