@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         Rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
     }
 
     void Update()
