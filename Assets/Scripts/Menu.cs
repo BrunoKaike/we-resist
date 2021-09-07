@@ -15,14 +15,26 @@ public class Menu : MonoBehaviour
         StartCoroutine(WaitBeforeQuit());
     }
 
+    public void GameOver()
+    {
+        StartCoroutine(WaitBeforeGameOver());
+    }
+
     private IEnumerator WaitBeforePlay() {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log(">> Play!");
+        SceneManager.LoadScene(1);
     }
 
     private IEnumerator WaitBeforeQuit() {
         yield return new WaitForSeconds(1);
         Debug.Log(">> Quit!");
         Application.Quit();
+    }
+
+    private IEnumerator WaitBeforeGameOver() {
+        yield return new WaitForSeconds(1);
+        Debug.Log(">> GameOver!");
+        SceneManager.LoadScene(2);
     }
 }
