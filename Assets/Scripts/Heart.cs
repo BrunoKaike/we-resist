@@ -2,31 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pearl : MonoBehaviour
+public class Heart : MonoBehaviour
 {
-    //private SpriteRenderer sr;
-    //private CircleCollider2D cc;
-
-    public int Score;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //sr = GetComponent<SpriteRenderer>();
-        //cc = GetComponent<CircleCollider2D>();
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {
             StartCollectEffect();
 
-            GameController.instance.TotalScore += Score;
-            GameController.instance.UpdateScoreText();
+            GameController.instance.Life++;
+            GameController.instance.UpdateLifeText();
 
-            Destroy(gameObject, 0.25f);
- 
+            Destroy(gameObject, 0.5f);
         }
     }
 
@@ -51,6 +38,4 @@ public class Pearl : MonoBehaviour
 
         yield return null;
     }
-
-   
 }

@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         Rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
     }
 
     void Update()
@@ -114,6 +113,7 @@ public class Player : MonoBehaviour
         //8 eh o nosso layer 'Ground' do objeto Ground
         if(collision.gameObject.layer == 8) {
             isJumping = false;
+            isDoubleJump = false;
             animator.SetBool("jump", false);
             animator.SetBool("doublejump", false);
         }
@@ -126,6 +126,7 @@ public class Player : MonoBehaviour
         //8 eh o nosso layer 'Ground' do objeto Ground
         if(collision.gameObject.layer == 8) {
             isJumping = true;
+            animator.SetBool("jump", true);
         }
     }
 

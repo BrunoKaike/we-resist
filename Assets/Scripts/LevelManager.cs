@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public GameObject deathParticle;
     public GameObject respawnParticle;
     private Player player;
+    //private Menu menu;
 
     // Start is called before the first frame update
     void Start()
@@ -46,5 +47,14 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Renderer>().enabled = true;
         player.GetComponent<Rigidbody2D>().gravityScale = gravity;
         Instantiate(respawnParticle, player.transform.position, player.transform.rotation);
+    }
+
+    //Game over - dont work
+    public void GameOver()
+    {
+        GameController.instance.Life = 3;
+        GameController.instance.TotalScore = 0;
+        //reiniciar
+        //menu.GameOver();
     }
 }
