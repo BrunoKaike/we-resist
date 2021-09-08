@@ -117,6 +117,7 @@ public class Player : MonoBehaviour
             animator.SetBool("jump", false);
             animator.SetBool("doublejump", false);
         }
+      
 
     }
 
@@ -129,5 +130,6 @@ public class Player : MonoBehaviour
             animator.SetBool("jump", true);
         }
     }
+    
 
 }
