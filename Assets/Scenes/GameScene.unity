@@ -208,7 +208,6 @@ GameObject:
   - component: {fileID: 117869421}
   - component: {fileID: 117869420}
   - component: {fileID: 117869419}
-  - component: {fileID: 117869423}
   m_Layer: 0
   m_Name: Square
   m_TagString: caixa
@@ -262,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &117869421
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -328,18 +327,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &117869423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117869418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb3196935197bf4885efb27521dbc26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &131576463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3723269681643833961, guid: e3690b0f982388d41bb8fa8be0bb9534, type: 3}
@@ -2751,6 +2738,7 @@ GameObject:
   - component: {fileID: 1932663534}
   - component: {fileID: 1932663533}
   - component: {fileID: 1932663532}
+  - component: {fileID: 1932663538}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Player
@@ -2906,6 +2894,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932663538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932663531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30299a6a2fd26be498ff9b5687017ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  boxMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1972356618
 GameObject:
   m_ObjectHideFlags: 0

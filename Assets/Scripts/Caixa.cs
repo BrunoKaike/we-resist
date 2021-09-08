@@ -6,8 +6,9 @@ public class Caixa : MonoBehaviour
 {
     private Rigidbody2D caixa;
     void Start()
-    {
 
+    {
+        
         caixa = GetComponent<Rigidbody2D>();
         
     }
