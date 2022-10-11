@@ -4,7 +4,7 @@
 We resist is an artistic (non-profit) 2D platformer prototype that explores the life of a wet nurse in the colonial period. The game tells the story of Yalie, a wet nurse, who is on the run after murdering her mistress(slaveholders' wife).
 
 <center>
-<img src="Assets/We Resist/Arte/Logo/WE RESIST - branco.png" width="550" height="300">
+<img src="Assets/We Resist/Arte/Logo/Design sem nome (12).png" width="550" height="500">
 </center>
 
 ## Objective
